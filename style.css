@@ -486,3 +486,144 @@ nav ul li a:hover::after{
     font-style: italic;
 
 }
+
+
+
+
+
+/*---------------mobile--------------*/
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+@media (max-width: 900px) {
+
+  /* ---------- Global spacing ---------- */
+  .container,
+  .container1,
+  #achievements,
+  #resume {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  /* ---------- NAV ---------- */
+  nav {
+    padding: 10px 6%;
+  }
+
+  nav ul {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  /* ---------- HERO ---------- */
+  .header-intro {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .text1 {
+    margin-top: 80px;
+  }
+
+  .text1 h1 {
+    font-size: 28px;
+  }
+
+  .text1 p {
+    font-size: 42px;
+  }
+
+  .text1 h2 {
+    font-size: 18px;
+  }
+
+  .icon {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .icon img {
+    width: min(340px, 90%);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .rowpic img {
+    width: min(300px, 90%);
+    margin: 0 auto;
+  }
+
+  .profile-grid {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* ---------- ACHIEVEMENTS ---------- */
+
+  /* Move central line to the LEFT */
+  .timeline::before {
+    left: 16px;
+    transform: none;
+  }
+
+  /* Collapse to 2-column layout: dot | content */
+  .timelinerow {
+    grid-template-columns: 32px 1fr;
+    column-gap: 14px;
+    margin: 28px 0;
+  }
+
+  /* Hide empty sides */
+  .rowleft:empty,
+  .rowright:empty {
+    display: none;
+  }
+
+  /* Make all text left-aligned */
+  .rowleft,
+  .rowright {
+    text-align: left;
+  }
+
+  /* Dot aligns perfectly */
+  .timelinedot {
+    transform: none;
+    margin-top: 6px;
+  }
+
+  /* Typography scaling */
+  .ach-name {
+    font-size: 22px;
+    line-height: 1.15;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .content p.desc {
+    font-size: 15px;
+  }
+
+  /* ---------- RESUME ---------- */
+  .resume-button {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .nametag {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
