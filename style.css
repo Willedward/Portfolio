@@ -589,7 +589,7 @@ nav ul li a:hover::after{
   #header
   {
     margin-bottom: 10%;
-    margin-top: -16%;
+    margin-top: -10%;
   }
 
   /* ---------- NAV ---------- */
@@ -723,3 +723,4 @@ nav ul li a:hover::after{
   .content p{ font-size: 15px; }
   .year{ font-size: 14px; }
 }
+
