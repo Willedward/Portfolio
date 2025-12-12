@@ -591,7 +591,8 @@ nav ul li a:hover::after{
 
   /* line stays on the left */
   .timeline::before{
-    left: 5px;
+    z-index:1;
+    left: 6.5px;
     transform: none;
   }
 
@@ -604,6 +605,7 @@ nav ul li a:hover::after{
 
   /* dot always in column 1 */
   .timelinedot{
+    z-index:3;
     grid-column: 1;
     grid-row: 1;
     transform: none;
@@ -632,6 +634,3 @@ nav ul li a:hover::after{
   .content p{ font-size: 15px; }
   .year{ font-size: 14px; }
 }
-
-
-
