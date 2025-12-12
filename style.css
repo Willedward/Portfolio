@@ -571,49 +571,7 @@ nav ul li a:hover::after{
   /* ---------- ACHIEVEMENTS ---------- */
 
   /* Move central line to the LEFT */
-  .timeline::before {
-    left: 16px;
-    transform: none;
-  }
 
-  /* Collapse to 2-column layout: dot | content */
-  .timelinerow {
-    grid-template-columns: 32px 1fr;
-    column-gap: 14px;
-    margin: 28px 0;
-  }
-
-  /* Hide empty sides */
-  .rowleft:empty,
-  .rowright:empty {
-    display: none;
-  }
-
-  /* Make all text left-aligned */
-  .rowleft,
-  .rowright {
-    text-align: left;
-  }
-
-  /* Dot aligns perfectly */
-  .timelinedot {
-    transform: none;
-    margin-top: 6px;
-  }
-
-  /* Typography scaling */
-  .ach-name {
-    font-size: 22px;
-    line-height: 1.15;
-  }
-
-  .content p {
-    font-size: 16px;
-  }
-
-  .content p.desc {
-    font-size: 15px;
-  }
 
   /* ---------- RESUME ---------- */
   .resume-button {
@@ -626,4 +584,51 @@ nav ul li a:hover::after{
     font-size: 16px;
     padding: 0 10px;
   }
+}
+
+/* ===== MOBILE FIX: Timeline always on the right of the line ===== */
+@media (max-width: 600px) {
+
+  /* line stays on the left */
+  .timeline::before{
+    left: 18px;
+    transform: none;
+  }
+
+  /* make each row: [dot] [content] */
+  .timelinerow{
+    grid-template-columns: 36px 1fr;
+    column-gap: 14px;
+    align-items: flex-start;
+  }
+
+  /* dot always in column 1 */
+  .timelinedot{
+    grid-column: 1;
+    grid-row: 1;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  /* force BOTH sides to become the same "content column" */
+  .rowleft,
+  .rowright{
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    width: 100%;
+    min-width: 0; /* important: prevents weird shrinking */
+  }
+
+  /* stop titles from breaking into single letters */
+  .ach-name{
+    font-size: 22px;        /* smaller on phone */
+    line-height: 1.15;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: auto;
+  }
+
+  .content p{ font-size: 15px; }
+  .year{ font-size: 14px; }
 }
