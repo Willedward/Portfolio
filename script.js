@@ -84,3 +84,40 @@ document.addEventListener("DOMContentLoaded", function()
     }, {threshold:0.3});
     observer.observe(underline2); 
 });
+
+const toggleBtn = document.querySelector(".nav-toggle");
+const overlay = document.querySelector(".nav-overlay");
+const drawer = document.querySelector(".nav-drawer");
+
+function openMenu(){
+  document.body.classList.add("menu-open");
+  overlay.hidden = false;
+  toggleBtn.setAttribute("aria-expanded", "true");
+  drawer.setAttribute("aria-hidden", "false");
+}
+
+function closeMenu(){
+  document.body.classList.remove("menu-open");
+  overlay.hidden = true;
+  toggleBtn.setAttribute("aria-expanded", "false");
+  drawer.setAttribute("aria-hidden", "true");
+}
+
+toggleBtn.addEventListener("click", () => {
+  const isOpen = document.body.classList.contains("menu-open");
+  isOpen ? closeMenu() : openMenu();
+});
+
+overlay.addEventListener("click", closeMenu);
+
+// close when clicking a link
+drawer.querySelectorAll("a").forEach(a => {
+  a.addEventListener("click", closeMenu);
+});
+
+// close with ESC
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape") closeMenu();
+});
+
+
