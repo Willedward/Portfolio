@@ -17,7 +17,7 @@ body{
 
 }
 #header {
-    background-image: url("D:\William\Coding\Portfolio website\personal-portfolio-img\images\logo.png");
+    background-image: url("images\logo.png");
     background-position: center;
     background-size: cover;
     width : 100%;
@@ -723,4 +723,5 @@ nav ul li a:hover::after{
   .content p{ font-size: 15px; }
   .year{ font-size: 14px; }
 }
+
 
